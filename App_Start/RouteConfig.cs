@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Video_Store_Web_App
@@ -13,6 +9,8 @@ namespace Video_Store_Web_App
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            // Enabling Attribute Route
+            routes.MapMvcAttributeRoutes();
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
