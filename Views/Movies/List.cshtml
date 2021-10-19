@@ -1,0 +1,34 @@
+﻿@model  IEnumerable<Video_Store_Web_App.Models.Movie>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+<p>
+    @Html.ActionLink("NEW MOVIE", "New", "Movies", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <td>Movie</td>
+            <td>Genre</td>
+        </tr>
+    </thead>
+    @foreach (var movies in Model)
+    {
+        if (movies != null)
+        {
+            <tr>
+                <td>@Html.ActionLink(movies.Name,"Edit","Movies", new { Id = movies.Id }, null)</td>
+                <td>@movies.Genre.Name</td>
+    
+            </tr>
+        }
+
+    }
+</table>
+
+
+

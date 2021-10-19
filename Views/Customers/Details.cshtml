@@ -1,0 +1,15 @@
+﻿@model Video_Store_Web_App.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li><span>Membership Type:</span> @Model.MembershipType.Name</li>
+    @if (Model.BirthDate != null)
+    {
+        <li><span>Bith Date:</span> @Model.BirthDate</li>
+    }
+</ul>
+
